@@ -1,6 +1,3 @@
-"""
-"""
-
 import os, sys, asyncio, time
 import argparse
 import numpy as np
@@ -53,8 +50,8 @@ async def main():
         await sphero.roll(
             speed=speed,
             heading_in_degrees=heading,
-            wait_for_response=False, # try not waiting for the response
-            response_timeout_in_seconds=0.2)
+            wait_for_response=True # try not waiting for the response
+        )
         time.sleep(df.loc[index, 'desired_duration'])
 
         # TODO: might need to calculate duration based on the time
