@@ -27,6 +27,8 @@ def first_visit_monte_carlo_prediction(env, policy):
     # RL: An Introduction
     # Section 5.1
     # This differs from 'Hands-On RL with Python' Sudharsan Ravichandaran
+    # He uses an incremental update based on V' = V + (r - V)/n
+    # This follows from formula for adding one more number to an average of n-1 numbers.
     value_table = defaultdict(float)
     returns = defaultdict(list)
     for _ in range(NUM_EPISODES):
